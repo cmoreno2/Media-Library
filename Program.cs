@@ -17,6 +17,7 @@ do
   // display choices to user
   Console.WriteLine("1) Add Movie");
   Console.WriteLine("2) Display All Movies");
+  Console.WriteLine("3) Search for Movie");
   Console.WriteLine("Enter to quit");
   // input selection
   choice = Console.ReadLine();
@@ -73,7 +74,14 @@ do
     {
       Console.WriteLine(m.Display());
     }
+  } else if (choice == "3")
+  {
+    // Asking for title of movie
+    Console.WriteLine("Enter the title you would like to search for:");
+    // User input
+    string SearchTitle = Console.ReadLine();
+
   }
-} while (choice == "1" || choice == "2");
+} while (choice == "1" || choice == "2" || choice == "3");
 
 logger.Info("Program ended");
