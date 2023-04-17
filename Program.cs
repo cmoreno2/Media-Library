@@ -80,7 +80,14 @@ do
     Console.WriteLine("Enter the title you would like to search for:");
     // User input
     string SearchTitle = Console.ReadLine();
-
+    // LINQ - Where filter operator & Select projection operator & Contains quantifier operator
+var titles = movieFile.Movies.Where(m => m.title.Contains(SearchTitle)).Select(m => m.title);
+foreach(string t in titles)
+{
+    Console.WriteLine($"  {t}");
+}
+// LINQ - Count aggregation method
+Console.WriteLine($"There are {titles.Count()} movies with {SearchTitle} in the title:");
   }
 } while (choice == "1" || choice == "2" || choice == "3");
 
